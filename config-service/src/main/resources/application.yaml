@@ -2,6 +2,8 @@ server:
   port: 8888
 
 spring:
+  application:
+    name: config-service
   cloud:
     config:
       server:
@@ -9,6 +11,3 @@ spring:
           default-label: b6-ms-gateway
           uri: https://github.com/ever5390/MS-Vehicles-Sales
           search-paths: config-data
-
-application:
-  name: config-service
