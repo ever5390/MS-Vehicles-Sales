@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          default-label: b5-ms-eureka-server
+          default-label: b5-eureka-instances
           uri: https://github.com/ever5390/MS-Vehicles-Sales
           search-paths: config-data
 
