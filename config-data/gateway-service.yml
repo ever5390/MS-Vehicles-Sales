@@ -1,6 +1,5 @@
 server:
   port: 8222
-
 eureka:
   client:
     fetch-registry: true
@@ -12,7 +11,6 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
-
 spring:
   cloud:
     gateway:
@@ -21,14 +19,14 @@ spring:
           enabled: true
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: lb:http://USER-SERVICE
           predicates:
             - Path=/user/**
         - id: car-service
-          uri: lb://CAR-SERVICE
+          uri: lb:http://CAR-SERVICE
           predicates:
             - Path=/car/**
         - id: bike-service
-          uri: lb://BIKE-SERVICE
+          uri: lb:http://BIKE-SERVICE
           predicates:
             - Path=/bike/**
