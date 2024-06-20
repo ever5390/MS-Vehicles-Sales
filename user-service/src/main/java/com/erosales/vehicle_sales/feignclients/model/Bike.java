@@ -1,4 +1,4 @@
-package com.erosales.vehicle_sales.model;
+package com.erosales.vehicle_sales.feignclients.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
+public class Bike {
     private String brand;
     private String model;
+    private int userId;
 }
