@@ -72,7 +72,7 @@ public class UserSellerController {
         if(userService.getUserById(userId) == null)
             return ResponseEntity.notFound().build();
         Car carNew = userService.saveCar(userId, car);
-        return ResponseEntity.ok(car);
+        return ResponseEntity.ok(carNew);
     }
 
     @PostMapping("/savebike/{userId}")
@@ -80,7 +80,7 @@ public class UserSellerController {
         if(userService.getUserById(userId) == null)
             return ResponseEntity.notFound().build();
         Bike bikeNew = userService.saveBike(userId, bike);
-        return ResponseEntity.ok(bike);
+        return ResponseEntity.ok(bikeNew);
     }
 
     @GetMapping("/getAll/{userId}")
