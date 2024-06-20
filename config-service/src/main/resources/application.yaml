@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          default-label: config-server
+          default-label: b3-ms-config
           uri: https://github.com/ever5390/MS-Vehicles-Sales
           search-paths: config-data
 
