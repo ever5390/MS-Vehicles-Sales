@@ -8,6 +8,6 @@ spring:
     config:
       server:
         git:
-          default-label: gateway-fix
+          default-label: gateway-fix-sin-eureka
           uri: https://github.com/ever5390/MS-Vehicles-Sales
           search-paths: config-data
