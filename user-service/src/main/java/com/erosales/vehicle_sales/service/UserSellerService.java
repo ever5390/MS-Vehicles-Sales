@@ -6,6 +6,7 @@ import com.erosales.vehicle_sales.feignclients.CarFeignClient;
 import com.erosales.vehicle_sales.feignclients.model.Bike;
 import com.erosales.vehicle_sales.feignclients.model.Car;
 import com.erosales.vehicle_sales.repository.UserSellerRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -23,6 +24,12 @@ public class UserSellerService {
     CarFeignClient carFeignClient;
 
     BikeFeignClient bikeFeignClient;
+
+    @Value("${application.config.car-byuser-url}")
+    private String carByUserUrl;
+
+    @Value("${application.config.bike-byuser-url}")
+    private String bikeByUserUrl;
 
 
     public UserSellerService(UserSellerRepository userRepository, RestTemplate restTemplate, CarFeignClient carFeignClient, BikeFeignClient bikeFeignClient) {
@@ -47,13 +54,13 @@ public class UserSellerService {
 
     /* ::: Rest Template ::: */
     public List<Car> getCars(int userId) {
-        List<Car> cars = restTemplate.getForObject("${application.config.car-byuser-url}" + userId, List.class);
+        List<Car> cars = restTemplate.getForObject(carByUserUrl + userId, List.class);
         //List<Car> cars = restTemplate.getForObject("lb://car-service/car/byuser/" + userId, List.class);
         return cars;
     }
 
     public List<Bike> getBikes(int userId) {
-        List<Bike> bikes = restTemplate.getForObject("${application.config.bike-byuser-url}" + userId, List.class);
+        List<Bike> bikes = restTemplate.getForObject(bikeByUserUrl + userId, List.class);
         //List<Bike> bikes = restTemplate.getForObject("lb://bike-service/bike/byuser/" + userId, List.class);
         return bikes;
     }
