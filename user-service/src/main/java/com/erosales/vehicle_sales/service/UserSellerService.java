@@ -47,13 +47,13 @@ public class UserSellerService {
 
     /* ::: Rest Template ::: */
     public List<Car> getCars(int userId) {
-        List<Car> cars = restTemplate.getForObject("http://localhost:8002/car/byuser/" + userId, List.class);
+        List<Car> cars = restTemplate.getForObject("${application.config.car-byuser-url}" + userId, List.class);
         //List<Car> cars = restTemplate.getForObject("lb://car-service/car/byuser/" + userId, List.class);
         return cars;
     }
 
     public List<Bike> getBikes(int userId) {
-        List<Bike> bikes = restTemplate.getForObject("http://localhost:8003/bike/byuser/" + userId, List.class);
+        List<Bike> bikes = restTemplate.getForObject("${application.config.bike-byuser-url}" + userId, List.class);
         //List<Bike> bikes = restTemplate.getForObject("lb://bike-service/bike/byuser/" + userId, List.class);
         return bikes;
     }
