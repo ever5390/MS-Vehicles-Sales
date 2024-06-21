@@ -1,13 +1,6 @@
 server:
   port: 8081
 
-eureka:
-  client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
 spring:
   application:
     name: gateway-service
@@ -15,14 +8,14 @@ spring:
     gateway:
       routes:
         - id: user-service
-          uri: lb://user-service
+          uri: http://localhost:8001
           predicates:
             - Path=/user/**
         - id: car-service
-          uri: lb://car-service
+          uri: http://localhost:8002
           predicates:
             - Path=/car/**
         - id: bike-service
-          uri: lb://bike-service
+          uri: http://localhost:8003
           predicates:
             - Path=/bike/**
