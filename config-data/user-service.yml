@@ -1,2 +1,7 @@
 server:
   port: 8001
+
+application:
+  config:
+    bike-url: http://localhost:8003/bike
+    car-url: http://localhost:8002/car
