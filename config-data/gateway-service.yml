@@ -14,14 +14,14 @@ spring:
     gateway:
       routes:
         - id: user-service
-          uri: http://localhost:8001
+          uri: lb://user-service
           predicates:
             - Path=/user/**
         - id: car-service
-          uri: http://localhost:8002
+          uri: lb://car-service
           predicates:
             - Path=/car/**
         - id: bike-service
-          uri: http://localhost:8003
+          uri: lb://bike-service
           predicates:
             - Path=/bike/**
