@@ -5,10 +5,3 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8888
-
-application:
-  config:
-    bike-url: http://localhost:8081/bike
-    car-url: http://localhost:8081/car
-    car-byuser-url: http://localhost:8081/car/byuser/
-    bike-byuser-url: http://localhost:8081/bike/byuser/
