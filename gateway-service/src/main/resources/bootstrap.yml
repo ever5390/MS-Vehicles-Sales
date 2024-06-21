@@ -1,25 +1,18 @@
 server:
   port: 8081
+
 eureka:
   client:
-    fetch-registry: true
-    register-with-eureka: true
     service-url:
       default-zone: http://localhost:8761/eureka
   instance:
-    hostname: localhost
-
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 spring:
   application:
     name: gateway-service
   cloud:
-    config:
-      override-system-properties: false
     gateway:
-      discovery:
-        locator:
-          enabled: true
       routes:
         - id: user-service
           uri: lb://user-service
