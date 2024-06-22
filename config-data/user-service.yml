@@ -19,3 +19,4 @@ application:
     car-url: lb://car-service/car
     car-byuser-url: lb://car-service/car/byuser/
     bike-byuser-url: lb://bike-service/byuser/
+
