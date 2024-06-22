@@ -15,8 +15,8 @@ eureka:
 
 application:
   config:
-    bike-url: lb://bike-service/bike
-    car-url: lb://car-service/car
+    bike-url: http://bike-service/bike
+    car-url: http://car-service/car
     car-byuser-url: http://car-service/car/byuser/
     bike-byuser-url: http://bike-service/bike/byuser/
 
