@@ -15,7 +15,7 @@ eureka:
 
 application:
   config:
-    bike-url: http://localhost:8081/bike
-    car-url: http://localhost:8081/car
+    bike-url: lb://bike-service/bike
+    car-url: lb://car-service/car
     car-byuser-url: http://localhost:8081/car/byuser/
     bike-byuser-url: http://localhost:8081/bike/byuser/
