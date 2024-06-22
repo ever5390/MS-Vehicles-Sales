@@ -113,7 +113,7 @@ public class UserSellerController {
         return new ResponseEntity("El usuario " + userId + ", tiene las motos en el taller", HttpStatus.OK);
     }
 
-    private ResponseEntity<Bike> fallbackSaveBike(@PathVariable("userId") int userId, @RequestBody Car car, RuntimeException e) {
+    private ResponseEntity<Bike> fallbackSaveBike(@PathVariable("userId") int userId, @RequestBody Bike bike, RuntimeException e) {
         return new ResponseEntity("El usuario " + userId + ", no pudo guardar las motos por falta de recursos", HttpStatus.OK);
     }
 
