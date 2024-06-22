@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "bike-service", url = "${application.config.bike-url}")
-//@FeignClient(name = "bike-service", path = "/bike")
+//@FeignClient(name = "bike-service", url = "${application.config.bike-url}")
+@FeignClient(name = "bike-service", path = "/bike")
 public interface BikeFeignClient {
 
     @PostMapping()
