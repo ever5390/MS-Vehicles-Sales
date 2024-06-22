@@ -17,6 +17,6 @@ application:
   config:
     bike-url: lb://bike-service/bike
     car-url: lb://car-service/car
-    car-byuser-url: lb://car-service/car/byuser/
-    bike-byuser-url: lb://bike-service/byuser/
+    car-byuser-url: http://car-service/car/byuser/
+    bike-byuser-url: http://bike-service/bike/byuser/
 
