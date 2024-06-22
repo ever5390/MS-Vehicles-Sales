@@ -12,3 +12,7 @@ eureka:
     prefer-ip-address: true
 #    hostname: localhost
 #    ip-address: 127.0.0.1
+
+spring:
+  application:
+    zipkin: http://localhost:9411

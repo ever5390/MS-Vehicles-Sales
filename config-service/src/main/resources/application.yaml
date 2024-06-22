@@ -8,6 +8,6 @@ spring:
     config:
       server:
         git:
-          default-label: b7-circuit-breaker
+          default-label: b8-zipkin-sleuth
           uri: https://github.com/ever5390/MS-Vehicles-Sales
           search-paths: config-data
